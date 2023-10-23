@@ -113,29 +113,36 @@ public class ConsoleConversion {
              System.out.println("Didn't find the player with odd number.");    
         }
     }
-    
+    //DisplayPlayerStartWithLetter method
     public static void DisplayPlayerStartWithLetter()
     {
+        //let the user enter a letter, use it to search from the playerName list to find the matched info
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nPlease enter a letter:");
         String input = scanner.next().toUpperCase();
         System.out.println("\nThe Player's name start with " + input);
+        //use for loop the check each player's name in the plyaerName list
         for (Player player : playerName) 
         {
+            //if player's name start letter is same as the user input, display player's name
              if (player.getName().startsWith(input)) 
            {
                System.out.println(player.getName());
            }
         }
     }
-    
+    //AddNewPlayer methos
     public static void AddNewPlayer()
     {
+        //clear the list first to void the duplicate display
         playerName.clear();
+        //let use add the new player's name
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nPlease enter a new player name:\n");
         String input = scanner.next();
+        //add new player to namesToAdd list
         namesToAdd.add(input);
+        //call addPlayer method and display the updated list
         addPlayer();
         for (Player player : playerName) 
         {
